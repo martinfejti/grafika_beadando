@@ -2,6 +2,14 @@
 #include <GL/glut.h>
 #include "model.h"
 
+#ifndef INVALID_VERTEX_INDEX
+  #define INVALID_VERTEX_INDEX 0
+#endif
+
+#ifndef LINE_BUFFER_SIZE
+ #define LINE_BUFFER_SIZE 1024
+#endif
+
 int count_tokens(const char* text)
 {
     int i = 0;

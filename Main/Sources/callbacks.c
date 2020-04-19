@@ -1,10 +1,14 @@
-#include "GL/glut.h"
+#include <GL/glut.h>
 
 #include "callbacks.h"
 #include "camera.h"
 #include "game.h"
 #include "light.h"
 #include "helpmenu.h"
+
+#ifndef WINDOW_VIEWPORT_RATIO
+    #define WINDOW_VIEWPORT_RATIO 4/3   // screen ratio 4:3
+#endif
 
 void setCallbacks() {
     glutDisplayFunc(display);

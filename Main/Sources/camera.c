@@ -1,9 +1,6 @@
+#include <GL/glut.h>
 #include <stdbool.h>
 #include <math.h>
-#include <GL/glu.h>
-#include <GL/glext.h>
-#include <GL/gl.h>
-#include <GL/glut.h>
 #include "camera.h"
 
 #define FALSE 0

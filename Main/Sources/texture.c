@@ -1,4 +1,5 @@
 #include <GL/glut.h>
+#include <SOIL/SOIL.h>
 #include <stdio.h>
 #include "texture.h"
 

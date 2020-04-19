@@ -1,10 +1,14 @@
 #include <GL/glut.h>
+#include <math.h>
+#include <string.h>
 #include "game.h"
 #include "model.h"
 #include "draw.h"
 #include "texture.h"
 
-#define M_PI 3.1415926
+#ifndef M_PI
+    #define M_PI 3.141592653589793238462643383279502884197169399375105820974944592307816406286
+#endif
 
 Model models[32];
 Texture textures[3];

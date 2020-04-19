@@ -8,6 +8,22 @@
 
 #define GL_CLAMP_TO_EDGE 0x812F
 
+#ifndef WINDOW_HEIGHT
+    #define WINDOW_DEFAULT_HEIGHT 480
+#endif
+
+#ifndef WINDOW_WIDTH
+    #define WINDOW_DEFAULT_WIDTH 640
+#endif
+
+#ifndef WINDOW_VIEWPORT_RATIO
+    #define WINDOW_VIEWPORT_RATIO 4/3   // screen ratio 4:3
+#endif
+
+#ifndef WINDOW_ASPECT_RATIO
+    #define WINDOW_ASPECT_RATIO 50.0    // fow (field of view)
+#endif
+
 void initOpenGLConfig() {
     glShadeModel(GL_SMOOTH);
     glEnable(GL_NORMALIZE);
