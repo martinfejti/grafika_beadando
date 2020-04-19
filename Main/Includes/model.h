@@ -1,3 +1,4 @@
+#ifndef MODEL_H
 #define MODEL_H
 
 #include <stdio.h>
@@ -228,3 +229,5 @@ void print_bounding_box(const struct Model* model);
  * Scale the loaded model.
  */
 void scale_model(struct Model* model, double sx, double sy, double sz);
+
+#endif

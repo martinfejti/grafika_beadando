@@ -1,3 +1,6 @@
+#ifndef GAME_H
+#define GAME_H
+
 #include "model.h"
 #include "texture.h"
 
@@ -22,3 +25,5 @@ void initGame();
 void renderGame();
 void gameKeyboardSpecialButtonHandler(unsigned char key, int x, int y);
 void updateGame(double dt);
+
+#endif

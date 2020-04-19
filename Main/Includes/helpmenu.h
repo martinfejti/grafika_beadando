@@ -1,3 +1,6 @@
+#ifndef HELPMENU_H
+#define HELPMENU_H
+
 #include <stdbool.h>
 #include "texture.h"
 
@@ -10,3 +13,5 @@ void initHelpMenu();
 void helpmenuKeyboardSpecialButtonHandler(int key, int x, int y);
 void renderHelpMenuIfVisible();
 void renderHelpMenu();
+
+#endif

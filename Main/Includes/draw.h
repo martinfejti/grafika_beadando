@@ -1,3 +1,5 @@
+#ifndef 
+#define DRAW_H
 #include "model.h"
 
 /**
@@ -14,3 +16,5 @@ void draw_triangles(const struct Model* model);
  * Draws the quads of the model.
  */
 void draw_quads(const struct Model* model);
+
+#endif

@@ -3,7 +3,6 @@
 
 #include "helpmenu.h"
 #include "texture.h"
-#include "constants.h"
 
 HelpMenu helpMenu;
 

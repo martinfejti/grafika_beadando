@@ -1,3 +1,4 @@
+#ifndef CAMERA_H
 #define CAMERA_H
 
 #include <stdbool.h>
@@ -16,3 +17,5 @@ void renderCamera();
 void cameraMouseMotionHandler(int x, int y);
 void cameraMouseHandler(int button, int state, int x, int y);
 void cameraMouseScrollHandler(int wheel, int direction, int x, int y);
+
+#endif

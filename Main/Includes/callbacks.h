@@ -1,3 +1,6 @@
+#ifndef CALLBACKS_H
+#define CALLBACKS_H
+
 #include <GL/glut.h>
 
 void setCallbacks();
@@ -9,3 +12,5 @@ void mouseMotionHandler(int x, int y);
 void keyboardNormalButtonHandler(unsigned char key, int x, int y);
 void keyboardSpecialButtonHandler(int key, int x, int y);
 void idle();
+
+#endif

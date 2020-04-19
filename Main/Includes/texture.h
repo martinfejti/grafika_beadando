@@ -1,3 +1,6 @@
+#ifndef TEXTURE_H
+#define TEXTURE_H
+
 #include <GL/glut.h>
 
 typedef GLubyte Pixel[];
@@ -9,3 +12,5 @@ typedef struct Texture {
 } Texture;
 
 void loadTexture(Texture* texture, const char filename[100]);
+
+#endif
