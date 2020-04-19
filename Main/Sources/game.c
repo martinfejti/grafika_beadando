@@ -25,7 +25,7 @@ void loadModels() {
 
     for (int i = 1; i <=30; i++) {
         char str[100];
-        sprintf(str, "%s%d", "Models/ReactorTrail/ReactorTrail_", i, ".obj");
+        sprintf(str, "%s%d%s", "Models/ReactorTrail/ReactorTrail_", i, ".obj");
 
         load_model(str, &(models[i+1]));
         scale_model(&(models[i+1]), 0.05, 0.05, 0.05);
