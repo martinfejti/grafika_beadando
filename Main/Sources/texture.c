@@ -10,10 +10,10 @@ void loadTexture(Texture* texture, const char filename[100]) {
 
     texture->image = (Pixel*)SOIL_load_image(filename, &width, &height, 0, SOIL_LOAD_RGBA);
     if (texture->image == NULL) {
-        printf('Could not load texture: %s\n', filename);
-        printf('The error was: %s\n', SOIL_last_result());
+        printf("Could not load texture: %s\n", filename);
+        printf("The error was: %s\n", SOIL_last_result());
     } else {
-        printf('Texture was loaded: %s\n', filename);
+        printf("Texture was loaded: %s\n", filename);
     }
 
     glBindTexture(GL_TEXTURE_2D, texture->id); // bind texture to target (target, texture)

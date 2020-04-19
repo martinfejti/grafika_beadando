@@ -22,7 +22,7 @@ void lightKeyboardNormalButtonHandler(unsigned char key, int x, int y) {
         case '+': 
             light.intensity += 0.025;
             break;
-        case: '-':
+        case '-':
             light.intensity -= 0.025;
             break;
     }
@@ -38,10 +38,10 @@ void lightKeyboardNormalButtonHandler(unsigned char key, int x, int y) {
 
 void renderLight() {
     GLfloat colorCorrectedByIntensity[] = {
-        light.color[0] * light.intensity;
-        light.color[1] * light.intensity;
-        light.color[2] * light.intensity;
-        light.color[3];
+        light.color[0] * light.intensity,
+        light.color[1] * light.intensity,
+        light.color[2] * light.intensity,
+        light.color[3]
     };
 
     glLightfv(light.id, GL_POSITION, light.position);
