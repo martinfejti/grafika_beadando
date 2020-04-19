@@ -18,9 +18,9 @@ AnimatedGameObject reactorTrail;
 
 void loadModels() {
     load_model("Models/Earth/Earth.obj", &(models[0]));
-    scale_model(&(models[0], 0.5, 0.5, 0.5);
+    scale_model(&(models[0]), 0.5, 0.5, 0.5);
 
-    load_model("Models/Reactor/Reactor.obj", &(models[1]);
+    load_model("Models/Reactor/Reactor.obj", &(models[1]));
     scale_model(&(models[1]), 0.05, 0.05, 0.05);
 
     for (int i = 1; i <=30; i++) {
@@ -50,7 +50,7 @@ void initGame() {
     earth.rotateX = 90.0;
     earth.rotateY = 0.0;
     earth.rotateZ = 0.0;
-    earth.currentModelIndex = 0;
+    earth.currentIndexModel = 0;
     earth.animationSpeedFactor = 40;
 
     reactor.model = &models[1];
@@ -61,7 +61,7 @@ void initGame() {
     reactor.rotateX = 0.0;
     reactor.rotateY = 180.0;
     reactor.rotateZ = 0.0;
-    reactor.currentModelIndex = 1;
+    reactor.currentIndexModel = 1;
     reactor.animationSpeedFactor = 20;
 
     reactorTrail.model = &models[2];
@@ -72,7 +72,7 @@ void initGame() {
     reactorTrail.rotateX = 0.0;
     reactorTrail.rotateY = 180.0;
     reactorTrail.rotateZ = 0.0;
-    reactorTrail.currentModelIndex = 1.51;
+    reactorTrail.currentIndexModel = 1.51;
     reactorTrail.animationSpeedFactor = 40;
 }
 
@@ -142,7 +142,7 @@ void renderGame() {
 void updateGame(double dt) {
     double correctedDt = dt/1000;
 
-    earth.rotateZ += correctedDt * eart.animationSpeedFactor;
+    earth.rotateZ += correctedDt * earth.animationSpeedFactor;
 
     reactorTrail.currentIndexModel += correctedDt * reactorTrail.animationSpeedFactor;
     if (reactorTrail.currentIndexModel > 31.49) {

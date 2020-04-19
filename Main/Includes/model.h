@@ -20,7 +20,7 @@ struct TextureVertex {
 };
 
 struct FacePoint {
-    int vertex_intex;
+    int vertex_index;
     int texture_index;
     int normal_index;
 };

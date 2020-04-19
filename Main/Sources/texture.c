@@ -24,7 +24,7 @@ void loadTexture(Texture* texture, const char filename[100]) {
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP); // set parameters
 
     float border_color[4] = {0, 0, 0, 0.7};
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border_color); // set border color
+    glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border_color); // set border color
 
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
