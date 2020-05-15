@@ -16,5 +16,5 @@ all:
 		-lopengl32						\
 		-lglu32							\
 		-lm								\
-		-lobj							\
 		-o Game.exe
+		-lobj
