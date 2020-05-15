@@ -33,7 +33,7 @@ void draw_triangles(const struct Model* model) {
 
     glEnd();
 }
-
+/*
 void draw_quads(const struct Model* model) {
     int i, k;
     int vertex_index, texture_index, normal_index;
@@ -60,7 +60,7 @@ void draw_quads(const struct Model* model) {
 
     glEnd();
 }
-
+*/
 void draw_model(const struct Model* model) {
     draw_triangles(model);
 }

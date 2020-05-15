@@ -5,6 +5,7 @@
 #include "model.h"
 #include "draw.h"
 #include "texture.h"
+#include <obj/load.h>
 
 #ifndef M_PI
     #define M_PI 3.141592653589793238462643383279502884197169399375105820974944592307816406286
@@ -17,17 +18,17 @@ AnimatedGameObject reactor;
 AnimatedGameObject reactorTrail;
 
 void loadModels() {
-    load_model("Models/Earth/Earth.obj", &(models[0]));
+    load_model(&(models[0]), "Models/Earth/Earth.obj");
     scale_model(&(models[0]), 0.5, 0.5, 0.5);
 
-    load_model("Models/Reactor/Reactor.obj", &(models[1]));
+    load_model(&(models[1]), "Models/Reactor/Reactor.obj");
     scale_model(&(models[1]), 0.05, 0.05, 0.05);
 
     for (int i = 1; i <=30; i++) {
         char str[100];
         sprintf(str, "%s%d%s", "Models/ReactorTrail/ReactorTrail_", i, ".obj");
 
-        load_model(str, &(models[i+1]));
+        load_model(&(models[i+1]), str);
         scale_model(&(models[i+1]), 0.05, 0.05, 0.05);
     }
 }
