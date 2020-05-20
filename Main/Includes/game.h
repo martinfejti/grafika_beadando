@@ -16,7 +16,7 @@ typedef struct GameObject {
 } GameObject;
 
 typedef struct AnimatedGameObject {
-    struct GameObject;
+    struct GameObject gameObject;
     double currentIndexModel;
     double animationSpeedFactor;
 } AnimatedGameObject;

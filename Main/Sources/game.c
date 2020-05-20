@@ -43,57 +43,57 @@ void initGame() {
     loadModels();
     loadTextures();
 
-    earth.model = &models[0];
-    earth.texture = &textures[0];
-    earth.posX = 0.0;
-    earth.posY = 0.0;
-    earth.posZ = 0.0;
-    earth.rotateX = 90.0;
-    earth.rotateY = 0.0;
-    earth.rotateZ = 0.0;
+    earth.gameObject.model = &models[0];
+    earth.gameObject.texture = &textures[0];
+    earth.gameObject.posX = 0.0;
+    earth.gameObject.posY = 0.0;
+    earth.gameObject.posZ = 0.0;
+    earth.gameObject.rotateX = 90.0;
+    earth.gameObject.rotateY = 0.0;
+    earth.gameObject.rotateZ = 0.0;
     earth.currentIndexModel = 0;
     earth.animationSpeedFactor = 40;
 
-    reactor.model = &models[1];
-    reactor.texture = &textures[1];
-    reactor.posX = 2.0;
-    reactor.posY = 0.0;
-    reactor.posZ = 0.0;
-    reactor.rotateX = 0.0;
-    reactor.rotateY = 180.0;
-    reactor.rotateZ = 0.0;
+    reactor.gameObject.model = &models[1];
+    reactor.gameObject.texture = &textures[1];
+    reactor.gameObject.posX = 2.0;
+    reactor.gameObject.posY = 0.0;
+    reactor.gameObject.posZ = 0.0;
+    reactor.gameObject.rotateX = 0.0;
+    reactor.gameObject.rotateY = 180.0;
+    reactor.gameObject.rotateZ = 0.0;
     reactor.currentIndexModel = 1;
     reactor.animationSpeedFactor = 20;
 
-    reactorTrail.model = &models[2];
-    reactorTrail.texture = &textures[2];
-    reactorTrail.posX = 2.0;
-    reactorTrail.posY = 0.0;
-    reactorTrail.posZ = 0.0;
-    reactorTrail.rotateX = 0.0;
-    reactorTrail.rotateY = 180.0;
-    reactorTrail.rotateZ = 0.0;
+    reactorTrail.gameObject.model = &models[2];
+    reactorTrail.gameObject.texture = &textures[2];
+    reactorTrail.gameObject.posX = 2.0;
+    reactorTrail.gameObject.posY = 0.0;
+    reactorTrail.gameObject.posZ = 0.0;
+    reactorTrail.gameObject.rotateX = 0.0;
+    reactorTrail.gameObject.rotateY = 180.0;
+    reactorTrail.gameObject.rotateZ = 0.0;
     reactorTrail.currentIndexModel = 1.51;
     reactorTrail.animationSpeedFactor = 40;
 }
 
 void renderGame() {
     glPushMatrix();
-        glBindTexture(GL_TEXTURE_2D, earth.texture->id);
-        glTranslatef(earth.posX, earth.posY, earth.posZ);
-        glRotatef(earth.rotateX, 1, 0, 0);
-        glRotatef(earth.rotateY, 0, 1, 0);
-        glRotatef(earth.rotateZ, 0, 0, 1);
-        draw_model(earth.model);
+        glBindTexture(GL_TEXTURE_2D, earth.gameObject.texture->id);
+        glTranslatef(earth.gameObject.posX, earth.gameObject.posY, earth.gameObject.posZ);
+        glRotatef(earth.gameObject.rotateX, 1, 0, 0);
+        glRotatef(earth.gameObject.rotateY, 0, 1, 0);
+        glRotatef(earth.gameObject.rotateZ, 0, 0, 1);
+        draw_model(earth.gameObject.model);
     glPopMatrix();
 
     glPushMatrix();
-        glBindTexture(GL_TEXTURE_2D, reactor.texture->id);
-        glTranslatef(reactor.posX, reactor.posY, reactor.posZ);
-        glRotatef(reactor.rotateX, 1, 0, 0);
-        glRotatef(reactor.rotateY, 0, 1, 0);
-        glRotatef(reactor.rotateZ, 0, 0, 1);
-        draw_model(reactor.model);
+        glBindTexture(GL_TEXTURE_2D, reactor.gameObject.texture->id);
+        glTranslatef(reactor.gameObject.posX, reactor.gameObject.posY, reactor.gameObject.posZ);
+        glRotatef(reactor.gameObject.rotateX, 1, 0, 0);
+        glRotatef(reactor.gameObject.rotateY, 0, 1, 0);
+        glRotatef(reactor.gameObject.rotateZ, 0, 0, 1);
+        draw_model(reactor.gameObject.model);
     glPopMatrix();
 
     GLfloat a1[4] = {0.5, 0.5, 0.5, 1.0};
@@ -106,12 +106,12 @@ void renderGame() {
         glCullFace(GL_FRONT); 
         glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, a1);
 
-        glBindTexture(GL_TEXTURE_2D, reactorTrail.texture->id);
-        glTranslatef(reactor.posX, reactor.posY, reactor.posZ);
-        glRotatef(reactor.rotateX, 1, 0, 0);
-        glRotatef(reactor.rotateY, 0, 1, 0);
-        glRotatef(reactor.rotateZ, 0, 0, 1);
-        draw_model(reactorTrail.model);
+        glBindTexture(GL_TEXTURE_2D, reactorTrail.gameObject.texture->id);
+        glTranslatef(reactor.gameObject.posX, reactor.gameObject.posY, reactor.gameObject.posZ);
+        glRotatef(reactor.gameObject.rotateX, 1, 0, 0);
+        glRotatef(reactor.gameObject.rotateY, 0, 1, 0);
+        glRotatef(reactor.gameObject.rotateZ, 0, 0, 1);
+        draw_model(reactorTrail.gameObject.model);
 
         glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, a2);
         glDepthMask(GL_TRUE);
@@ -126,12 +126,12 @@ void renderGame() {
         glCullFace(GL_BACK); 
         glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, a1);
 
-        glBindTexture(GL_TEXTURE_2D, reactorTrail.texture->id);
-        glTranslatef(reactor.posX, reactor.posY, reactor.posZ);
-        glRotatef(reactor.rotateX, 1, 0, 0);
-        glRotatef(reactor.rotateY, 0, 1, 0);
-        glRotatef(reactor.rotateZ, 0, 0, 1);
-        draw_model(reactorTrail.model);
+        glBindTexture(GL_TEXTURE_2D, reactorTrail.gameObject.texture->id);
+        glTranslatef(reactor.gameObject.posX, reactor.gameObject.posY, reactor.gameObject.posZ);
+        glRotatef(reactor.gameObject.rotateX, 1, 0, 0);
+        glRotatef(reactor.gameObject.rotateY, 0, 1, 0);
+        glRotatef(reactor.gameObject.rotateZ, 0, 0, 1);
+        draw_model(reactorTrail.gameObject.model);
 
         glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, a2);
         glDepthMask(GL_TRUE);
@@ -143,17 +143,17 @@ void renderGame() {
 void updateGame(double dt) {
     double correctedDt = dt/1000;
 
-    earth.rotateZ += correctedDt * earth.animationSpeedFactor;
+    earth.gameObject.rotateZ += correctedDt * earth.animationSpeedFactor;
 
     reactorTrail.currentIndexModel += correctedDt * reactorTrail.animationSpeedFactor;
     if (reactorTrail.currentIndexModel > 31.49) {
         reactorTrail.currentIndexModel = 1.51;
     }
-    reactorTrail.model = &models[(int)round(reactorTrail.currentIndexModel)];
+    reactorTrail.gameObject.model = &models[(int)round(reactorTrail.currentIndexModel)];
     
-    reactor.rotateY += correctedDt * reactor.animationSpeedFactor;
-    reactor.posZ = 2 * cos((reactor.rotateY - 90) / 180 * M_PI);
-    reactor.posX = 2 * sin((reactor.rotateY - 90) / 180 * M_PI);
+    reactor.gameObject.rotateY += correctedDt * reactor.animationSpeedFactor;
+    reactor.gameObject.posZ = 2 * cos((reactor.gameObject.rotateY - 90) / 180 * M_PI);
+    reactor.gameObject.posX = 2 * sin((reactor.gameObject.rotateY - 90) / 180 * M_PI);
 }
 
 void gameKeyboardSpecialButtonHandler(unsigned char key, int x, int y) {
